@@ -1,0 +1,11 @@
+[Unit]
+Description=Degree Works Graceful Shutdown
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/bin/true
+ExecStop=/bin/ksh -ac '. /home/dwadmin/cron/scripts/envDw ; exec /home/dwadmin/cron/scripts/stopdw.sh'
+
+[Install]
+WantedBy=multi-user.target
